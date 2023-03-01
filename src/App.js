@@ -1,6 +1,22 @@
+import { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [fill, setFill] = useState("rgb(14, 68, 41)")
+  
+  const fillColors = [
+    "rgb(14, 68, 41)", 
+    "rgb(139, 148, 158)", 
+    "rgb(0, 109, 50)", 
+    "rgb(38, 166, 65)", 
+    "rgb(57, 211, 83)"
+  ];
+
+  // onclick function to cycle fill color
+  const colorCycle = () => {
+    
+  }
+
   return (
     <div className="App">
       <header className="App-header">
