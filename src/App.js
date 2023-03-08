@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css';
+import Square from './Square';
 
 function App() {
   const fillColors = {
@@ -10,30 +11,12 @@ function App() {
     4: "rgb(57, 211, 83)"
   };
 
-  const [fill, setFill] = useState(0)
-  
-
-  // onclick function to cycle fill color
-  const colorCycle = () => {
-    fill < 4 ? setFill(fill + 1) : setFill(0);
-  };
-
   return (
     <div className="App">
-      <header className="App-header">
-        <svg 
-          onClick={() => colorCycle()}
-          >
-          <rect height="11px" width="11px" 
-          style={{ fill: `${fillColors[fill]}` }} 
-          ></rect>
-        </svg>
-        <svg>          
-          <rect height="11px" width="11px" 
-          style={{ fill: `${fillColors[fill]}` }} 
-          onClick={colorCycle}></rect></svg>
-      </header>
-    </div>
+      {Array.from({ length: 10 }).map((_, index) => (
+        <Square key={index} colors={fillColors} />
+      ))}
+    </div> 
   );
 }
 

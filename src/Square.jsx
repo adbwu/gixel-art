@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 
 const Square = (props) => {
-  const [fill, setFill] = useState(0)
+  const [fill, setFill] = useState(props.fill)
 
   // onclick function to cycle fill color
   const colorCycle = () => {
@@ -11,12 +11,14 @@ const Square = (props) => {
 
   return (
     <svg 
-    onClick={[() => colorCycle()]}
+      onClick={colorCycle}
     >
-    <rect height="11px" width="11px" 
-    fill={props.fill}
-    ></rect>
-  </svg>
+        <rect 
+          height="11px" 
+          width="11px" 
+          fill={props.colors[fill]}
+        />
+    </svg>
   );
 };
 
