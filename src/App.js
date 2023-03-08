@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './App.css';
 
 function App() {
-  const [fill, setFill] = useState("rgb(14, 68, 41)")
+  const [fill, setFill] = useState("rgb(139, 148, 158)")
   
   const fillColors = [
     "rgb(14, 68, 41)", 
@@ -21,7 +21,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <svg viewBox="0 0 100 100">
-          <rect x="44.5" y="44.5" height="11" width="11" style={{ fill: '#fff' }}></rect>
+          <rect x="44.5" y="44.5" height="11" width="11" style={{ fill: `${fill}` }}></rect>
         </svg>
       </header>
     </div>
