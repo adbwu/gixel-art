@@ -2,26 +2,27 @@ import { useState } from 'react';
 import './App.css';
 
 function App() {
-  const [fill, setFill] = useState("rgb(139, 148, 158)")
+  const fillColors = {
+    0: "rgb(14, 68, 41)", 
+    1: "rgb(139, 148, 158)", 
+    2: "rgb(0, 109, 50)", 
+    3: "rgb(38, 166, 65)", 
+    4: "rgb(57, 211, 83)"
+  };
+
+  const [fill, setFill] = useState(0)
   
-  const fillColors = [
-    "rgb(14, 68, 41)", 
-    "rgb(139, 148, 158)", 
-    "rgb(0, 109, 50)", 
-    "rgb(38, 166, 65)", 
-    "rgb(57, 211, 83)"
-  ];
 
   // onclick function to cycle fill color
   const colorCycle = () => {
-    
+    console.log(fill);
   }
 
   return (
     <div className="App">
       <header className="App-header">
         <svg viewBox="0 0 100 100">
-          <rect x="44.5" y="44.5" height="11" width="11" style={{ fill: `${fill}` }}></rect>
+          <rect x="44.5" y="44.5" height="11px" width="11px" style={{ fill: `${fillColors[fill]}` }}></rect>
         </svg>
       </header>
     </div>
