@@ -16,14 +16,22 @@ function App() {
   // onclick function to cycle fill color
   const colorCycle = () => {
     fill < 4 ? setFill(fill + 1) : setFill(0);
-  }
+  };
 
   return (
     <div className="App">
       <header className="App-header">
-        <svg viewBox="0 0 100 100">
-          <rect x="44.5" y="44.5" height="11px" width="11px" style={{ fill: `${fillColors[fill]}` }} onClick={colorCycle}></rect>
+        <svg 
+          onClick={() => colorCycle()}
+          >
+          <rect height="11px" width="11px" 
+          style={{ fill: `${fillColors[fill]}` }} 
+          ></rect>
         </svg>
+        <svg>          
+          <rect height="11px" width="11px" 
+          style={{ fill: `${fillColors[fill]}` }} 
+          onClick={colorCycle}></rect></svg>
       </header>
     </div>
   );
